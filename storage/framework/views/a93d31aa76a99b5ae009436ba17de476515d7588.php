@@ -12,3 +12,4 @@
         </div>
     </div>
 </footer>
+<?php /**PATH C:\Users\sathe\Documents\projects\dstays\resources\views/layouts/footer.blade.php ENDPATH**/ ?>

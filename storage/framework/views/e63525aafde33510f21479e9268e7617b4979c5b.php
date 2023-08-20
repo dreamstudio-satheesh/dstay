@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\sathe\Documents\projects\dstays\resources\views/layouts/customizer.blade.php ENDPATH**/ ?>

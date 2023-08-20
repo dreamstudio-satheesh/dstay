@@ -3,21 +3,21 @@
     <!-- LOGO -->
     <div class="navbar-brand-box">
         <!-- Dark Logo-->
-        <a href="{{ url('')}}" class="logo logo-dark">
+        <a href="<?php echo e(url('')); ?>" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                <img src="<?php echo e(URL::asset('assets/images/logo-sm.png')); ?>" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="17">
+                <img src="<?php echo e(URL::asset('assets/images/logo-dark.png')); ?>" alt="" height="17">
             </span>
         </a>
         <!-- Light Logo-->
-        <a href="{{ url('')}}" class="logo logo-light">
+        <a href="<?php echo e(url('')); ?>" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                <img src="<?php echo e(URL::asset('assets/images/logo-sm.png')); ?>" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">
+                <img src="<?php echo e(URL::asset('assets/images/logo-light.png')); ?>" alt="" height="22">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -34,12 +34,12 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span>@lang('translation.dashboards')</span>
+                        <i class="ri-dashboard-2-line"></i> <span><?php echo app('translator')->get('translation.dashboards'); ?></span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ url('/')}}" class="nav-link">Home</a>
+                                <a href="<?php echo e(url('/')); ?>" class="nav-link">Home</a>
                             </li>
                            
                         </ul>
@@ -47,7 +47,7 @@
                 </li>
                
                 <li class="nav-item">
-                    <a href="{{ url('/admin/customers')}}"  class="nav-link"> <i class="ri-account-circle-line"></i> Customers List</a>
+                    <a href="<?php echo e(url('/admin/customers')); ?>"  class="nav-link"> <i class="ri-account-circle-line"></i> Customers List</a>
                 </li>
 
               
@@ -59,12 +59,12 @@
                     <div class="collapse menu-dropdown" id="sidebarMultilevel">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ url('admin/properties')}}" class="nav-link"> <i class=" ri-home-heart-line"></i>Property
+                                <a href="<?php echo e(url('admin/properties')); ?>" class="nav-link"> <i class=" ri-home-heart-line"></i>Property
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ url('/admin/users')}}"  class="nav-link"> <i class="ri-account-circle-line"></i> Admins List</a>
+                                <a href="<?php echo e(url('/admin/users')); ?>"  class="nav-link"> <i class="ri-account-circle-line"></i> Admins List</a>
                             </li>
                             
                         </ul>
@@ -80,3 +80,4 @@
 <!-- Left Sidebar End -->
 <!-- Vertical Overlay-->
 <div class="vertical-overlay"></div>
+<?php /**PATH C:\Users\sathe\Documents\projects\dstays\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
