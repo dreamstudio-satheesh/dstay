@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Property;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -36,7 +38,10 @@ class HomeController extends Controller
 
     public function root()
     {
-        return view('index');
+       $customers = Customer::all();
+       $properties = Property::all();
+       
+        return view('index',compact('customers','properties'));
     }
 
     /*Language Translation*/

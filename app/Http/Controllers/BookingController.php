@@ -14,7 +14,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
+       return $bookings = Booking::all();
         return view('bookings.index', compact('bookings'));
     }
 
@@ -37,12 +37,17 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'mobile' => 'required|integer|unique:bookings',
-            'address' => 'required|string|min:6',
+            'customer_id' => 'required|integer',
+            'property_id' => 'required|integer',
+            'number_of_people' => 'nullable',
+            'advance_payment' => 'nullable',
         ]);
 
-        $user = Booking::create($data);
+         $dates = explode('to', $request->book_date);
+         $data['check_in_date'] = trim($dates[0]);
+         $data['check_out_date'] = trim($dates[1]);
+
+         Booking::create($data);
 
         return redirect()->route('bookings.index')->with('success', 'Boooked  successfully!');
     }

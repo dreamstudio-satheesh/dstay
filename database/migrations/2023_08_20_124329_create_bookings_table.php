@@ -19,8 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('property_id');
             $table->dateTime('check_in_date');
             $table->dateTime('check_out_date');
-            $table->decimal('advance_payment', 10, 2);
+            $table->decimal('advance_payment', 10, 2)->nullable();
             $table->integer('number_of_people')->nullable();
+            $table->timestamps();
 
              // Foreign key constraints
              $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');

@@ -70,7 +70,47 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                         </div>
                         <div class="modal-body p-4">
-                            <form>
+                            <form method="post" action="{{ route('bookings.store') }}">
+                                 @csrf
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Select Property</label>
+                                    <select name="property_id" class="form-control" >
+                                        @foreach ($properties as $property)
+                                        <option value="{{ $property->id }}">{{ $property->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>     
+
+                                <div class="mb-3">
+                                    <label class="form-label text-muted">Select Customer</label>
+                                    <select name="customer_id" class="form-control" >
+                                        @foreach ($customers as $customer)
+                                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="customername-field" class="form-label">Booking date</label>
+                                    <input type="text" name="book_date" class="form-control" data-provider="flatpickr" data-date-format="d-m-Y" data-range-date="true">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="customername-field" class="form-label">No Of people</label>
+                                    <input type="number" name="number_of_people"  class="form-control" placeholder="No Of People">
+                                    
+                                </div>
+
+                               
+
+                                <div class="mb-3">
+                                    <label for="customername-field" class="form-label">Advance Payment</label>
+                                    <input type="text" name="advance_payment"  class="form-control" placeholder="Advance">
+                                    
+                                </div>
+
+                               
+                                    
                             
                                 <!--end row-->
                                 <div class="hstack gap-2 justify-content-end">
@@ -88,6 +128,7 @@
 @endsection
 @section('script')
     <script src="{{ URL::asset('assets/libs/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/app.min.js') }}"></script>
    
     <script>
 

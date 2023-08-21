@@ -50,6 +50,10 @@
                     <a href="<?php echo e(url('/admin/customers')); ?>"  class="nav-link"> <i class="ri-account-circle-line"></i> Customers List</a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="<?php echo e(url('/admin/bookings')); ?>"  class="nav-link"> <i class="ri-building-line"></i> Booking List</a>
+                </li>
+
               
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
